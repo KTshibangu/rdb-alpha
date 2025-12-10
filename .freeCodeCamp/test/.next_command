@@ -188,3 +188,16 @@ trap '__vsc_preexec_all "$_"' DEBUG
 __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 psql --username=freecodecamp --dbname=postgres
 pg_dump -cC --inserts -U freecodecamp universe > universe.sql
+git init
+git add universe.sql
+git commit -m "Add universe.sql database file"
+git remote add origin https://github.com/KTshibangu/universe-db.git
+git remote -v
+git branch -M main
+git push -u origin main
+git remote -v
+git remote set-url origin git@github.com:KTshibangu/universe-db.git
+git remote -v
+git add universe.sql
+git commit -m "Add universe.sql database file"
+git push -u origin main
